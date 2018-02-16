@@ -22,9 +22,16 @@ while drawing:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 character.x -= 5
-            elif event.key == pygame.k_DOWN:
+            elif event.key == pygame.K_RIGHT:
+                character.x += 5
+            elif event.key == pygame.K_UP:
+                character.y -= 5
+            elif event.key == pygame.K_DOWN:
                 character.y += 5
+                
 
     #Draw the character
     pygame.draw.ellipse(0, (0,255,255), character)
     
+    pygame.display.flip()
+    w.fill((255,255,255))

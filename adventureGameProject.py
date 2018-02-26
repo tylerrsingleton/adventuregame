@@ -9,7 +9,7 @@ pygame.init()
 
 #Create window
 w = pygame.display.set_mode([1000,500])
-
+w.fill((0,0,0))
 #Create characteristics of character
 character_color = (0, 255, 255)
 x = 0
@@ -20,7 +20,7 @@ drawing = True
 while drawing:
     #Create event loop
     for event in pygame.event.get():
-        if event.type == pyamge.QUIT:
+        if event.type == pygame.QUIT:
             drawing = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
@@ -36,4 +36,4 @@ while drawing:
     pygame.draw.circle(w, character_color, (x,y), 25)
     
     pygame.display.flip()
-    w.fill((255,255,255))
+    w.fill((0,0,0))

@@ -7,9 +7,10 @@
 import pygame
 pygame.init()
 
-#Create window
+#Create window and fill
 w = pygame.display.set_mode([1000,500])
 w.fill((0,0,0))
+
 #Create characteristics of character
 character_color = (0, 255, 255)
 x = 0
@@ -37,5 +38,7 @@ while drawing:
     pygame.draw.circle(w, (0,0,0), (x-8, y), 5)
     pygame.draw.circle(w, (0,0,0), (x+8, y), 5)
     pygame.draw.line(w, (0,0,0), (x-8, y+8), (x+8, y+8))
+    
+    #Flip display and fill window
     pygame.display.flip()
     w.fill((0,0,0))

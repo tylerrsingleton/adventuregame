@@ -3,6 +3,9 @@
 #that can move side to side with the arrow keys.
 #By Friday, 3/9/18, fix program and add characteristics to background and character.
 
+#import random
+import random
+
 #import and initialize pygame
 import pygame
 pygame.init()
@@ -15,6 +18,11 @@ w.fill((0,0,0))
 character_color = (0, 255, 255)
 x = 0
 y = 0
+
+#Bomb characteristics
+bomb_color = (239,73,40)
+bx = 1000
+by = random.randint(0,255)
 
 #Create main loop
 drawing = True
@@ -38,6 +46,12 @@ while drawing:
     pygame.draw.circle(w, (0,0,0), (x-8, y), 5)
     pygame.draw.circle(w, (0,0,0), (x+8, y), 5)
     pygame.draw.line(w, (0,0,0), (x-8, y+8), (x+8, y+8))
+    
+    #Draw bomb
+    pygame.draw.circle(w, bomb_color, (bx,by), 30)
+    bx -=1
+    if bx == 0:
+        bx = 1000
     
     #Flip display and fill window
     pygame.display.flip()

@@ -52,6 +52,7 @@ while drawing:
     bx -=1
     if bx == 0:
         bx = 1000
+        by = random.randint(0, 255)
     
     #Flip display and fill window
     pygame.display.flip()

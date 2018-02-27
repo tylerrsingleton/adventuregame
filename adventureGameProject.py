@@ -32,8 +32,9 @@ while drawing:
             elif event.key == pygame.K_DOWN:
                y += 5
                
-    #Draw the character
+    #Draw the character and eyes
     pygame.draw.circle(w, character_color, (x,y), 25)
-    
+    pygame.draw.circle(w, (0,0,0), (x-8, y), 5)
+    pygame.draw.circle(w, (0,0,0), (x+8, y), 5)
     pygame.display.flip()
     w.fill((0,0,0))

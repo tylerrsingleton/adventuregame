@@ -14,6 +14,9 @@ pygame.init()
 w = pygame.display.set_mode([1000,500])
 w.fill((0,0,0))
 
+#Create clock
+c = pygame.time.Clock()
+
 #Create characteristics of character
 character_color = (0, 255, 255)
 x = 0
@@ -49,10 +52,13 @@ while drawing:
     
     #Draw bomb
     pygame.draw.circle(w, bomb_color, (bx,by), 30)
-    bx -=1
+    bx -= 10
     if bx == 0:
         bx = 1000
         by = random.randint(0, 255)
+    
+    #Set tick
+    c.tick(30)
     
     #Flip display and fill window
     pygame.display.flip()

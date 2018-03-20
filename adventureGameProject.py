@@ -56,6 +56,11 @@ while drawing:
     if bx == 0:
         bx = 1000
         by = random.randint(0, 255)
+        
+    #Draw exit
+    exit_color = (255,255,255)
+    game_exit = pygame.Rect(980, 400, 20, 80)
+    pygame.draw.rect(w, exit_color, game_exit)
     
     #Set tick
     c.tick(30)

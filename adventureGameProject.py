@@ -32,6 +32,13 @@ by = random.randint(0,255)
 b = 0
 variation = 5
 
+#Food characteristics
+food_location = (random.randint(0,950), random.randint(0,450))
+food_color = (255,0,255)
+
+#Character speed
+speed = 5
+
 #Create main loop
 drawing = True
 while drawing:
@@ -41,13 +48,13 @@ while drawing:
             drawing = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                x -= 5
+                x -= speed
             elif event.key == pygame.K_RIGHT:
-                x += 5
+                x += speed
             elif event.key == pygame.K_UP:
-                y -= 5
+                y -= speed
             elif event.key == pygame.K_DOWN:
-               y += 5
+               y += speed
                
     #Draw the character, eyes, and mouth
     pygame.draw.circle(w, character_color, (x,y), 25)
@@ -76,13 +83,15 @@ while drawing:
         variation *= -1
         b = 0 
         
+    #Draw food:
+    pygame.draw.circle(w, food_color, food_location, 10)
+        
     #Check for collision between the exit and the character
     if (980 - 30) <= x <= 1000:
         if (400 - 30) <= y <= (480 + 30):
             drawing = False
             print("Congradulations! You beat the level.")
 
-    
     #Set tick
     c.tick(30)
     

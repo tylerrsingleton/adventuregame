@@ -2,7 +2,7 @@
 #By Friday, 2/16/18, create a window and charcter
 #that can move side to side with the arrow keys.
 #By Friday, 3/9/18, fix program and add characteristics to background and character.
-#By Friday, 3/23/17, create clock, add exit, and add collision between character and bomb
+#By Friday, 3/23/17, create clock, add exit, and add collision
 
 #import random
 import random
@@ -75,6 +75,13 @@ while drawing:
     elif b < 0:
         variation *= -1
         b = 0 
+        
+    #Check for collision between the exit and the character
+    if (980 - 30) <= x <= 1000:
+        if (400 - 30) <= y <= (480 + 30):
+            drawing = False
+            print("Congradulations! You beat the level.")
+
     
     #Set tick
     c.tick(30)

@@ -71,7 +71,7 @@ while drawing:
         
     #Draw exit
     exit_color = (255,255,255)
-    game_exit = pygame.Rect(980, 400, 20, 80)
+    game_exit = pygame.Rect(980, 400, 20, 100)
     pygame.draw.rect(w, exit_color, game_exit)
     
     #Have the exit color pulse white to yellow:

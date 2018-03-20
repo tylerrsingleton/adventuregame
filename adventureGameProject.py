@@ -2,6 +2,7 @@
 #By Friday, 2/16/18, create a window and charcter
 #that can move side to side with the arrow keys.
 #By Friday, 3/9/18, fix program and add characteristics to background and character.
+#By Friday, 3/23/17, create clock, add exit, and add collision between character and bomb
 
 #import random
 import random
@@ -26,6 +27,10 @@ y = 0
 bomb_color = (239,73,40)
 bx = 1000
 by = random.randint(0,255)
+
+#Exit color
+b = 0
+variation = 5
 
 #Create main loop
 drawing = True
@@ -61,6 +66,15 @@ while drawing:
     exit_color = (255,255,255)
     game_exit = pygame.Rect(980, 400, 20, 80)
     pygame.draw.rect(w, exit_color, game_exit)
+    
+    #Have the exit color pulse white to yellow:
+    b += variation
+    if b > 255:
+        b = 255
+        variation *= -1
+    elif b < 0:
+        variation *= -1
+        b = 0 
     
     #Set tick
     c.tick(30)

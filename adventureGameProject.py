@@ -2,7 +2,7 @@
 #By Friday, 2/16/18, create a window and charcter
 #that can move side to side with the arrow keys.
 #By Friday, 3/9/18, fix program and add characteristics to background and character.
-#By Friday, 3/23/17, create clock, add exit, and add collision
+#By Friday, 3/23/17, create clock, add exit, add fruit, and add collision
 
 #import random
 import random

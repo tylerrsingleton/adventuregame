@@ -91,7 +91,7 @@ while drawing:
         pygame.draw.circle(w, food_color, food_location, 10)
         
     #Check for collision between the exit and the character
-    if (980 - 30) <= x <= 1000:
+    if 980 <= x <= 1000:
         if 400 <= y <= 480:
             drawing = False
             print("Congradulations! You beat the level.")

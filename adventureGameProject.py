@@ -101,6 +101,12 @@ while drawing:
         if (food_y - 30) <= x <= (food_x + 30):
             speed += 5
             food_draw = False
+            
+    #Check for collision between the bomb and the character
+    if (bx - 30) <= x <= (bx + 30):
+        if (by - 30) <= x <= (by + 30):
+            print("Game Over")
+            drawing = False           
 
     #Set tick
     c.tick(30)

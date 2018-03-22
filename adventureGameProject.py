@@ -32,9 +32,12 @@ by = random.randint(0,255)
 b = 0
 variation = 5
 
-#Food characteristics
-food_location = (random.randint(0,950), random.randint(0,450))
+#food characteristics
+food_x = random.randint(0,950)
+food_y = random.randint(0,450)
+food_location = (food_x, food_y)
 food_color = (255,0,255)
+food_draw = True
 
 #Character speed
 speed = 5
@@ -84,13 +87,20 @@ while drawing:
         b = 0 
         
     #Draw food:
-    pygame.draw.circle(w, food_color, food_location, 10)
+    if food_draw:
+        pygame.draw.circle(w, food_color, food_location, 10)
         
     #Check for collision between the exit and the character
     if (980 - 30) <= x <= 1000:
-        if (400 - 30) <= y <= (480 + 30):
+        if 400 <= y <= 480:
             drawing = False
             print("Congradulations! You beat the level.")
+            
+    #Check for collision between the fruit and the character
+    if (food_x - 30) <= x <= (food_x + 30):
+        if (food_y - 30) <= x <= (food_x + 30):
+            speed += 5
+            food_draw = False
 
     #Set tick
     c.tick(30)
